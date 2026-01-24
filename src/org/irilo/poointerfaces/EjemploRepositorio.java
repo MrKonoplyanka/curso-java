@@ -2,12 +2,16 @@ package org.irilo.poointerfaces;
 
 import org.irilo.poointerfaces.modelo.Cliente;
 import org.irilo.poointerfaces.repositorio.*;
+import org.irilo.poointerfaces.repositorio.excepciones.AccesoDatoException;
+import org.irilo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 import org.irilo.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 
 public class EjemploRepositorio {
     public static void main(String[] args) {
+        try {
+            
         FullRepositorio<Cliente> repo = new ClienteListRepositorio();
         repo.crear(new Cliente("Jano", "Pérez"));
         repo.crear(new Cliente("Bea", "González"));
@@ -35,5 +39,11 @@ public class EjemploRepositorio {
         repo.listar().forEach(System.out::println);
 
         System.out.println("Total registros: " + repo.total());
+        }catch (LecturaAccesoDatoException e){
+            System.out.println("e = " + e);
+            e.printStackTrace();
+        }catch (AccesoDatoException e){
+            System.out.println("e = " + e);
+        }
     }
 }

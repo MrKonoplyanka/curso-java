@@ -3,6 +3,7 @@ package org.irilo.poointerfaces.repositorio.lista;
 import org.irilo.poointerfaces.modelo.Cliente;
 import org.irilo.poointerfaces.repositorio.AbstractListRepositorio;
 import org.irilo.poointerfaces.repositorio.Direccion;
+import org.irilo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public class ClienteListRepositorio extends AbstractListRepositorio<Cliente> {
 
 
     @Override
-    public void editar(Cliente cliente) {
+    public void editar(Cliente cliente) throws LecturaAccesoDatoException {
         Cliente c = this.porId(cliente.getId());
         c.setNombre(cliente.getNombre());
         c.setApellido(cliente.getApellido());

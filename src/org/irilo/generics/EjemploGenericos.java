@@ -62,6 +62,5 @@ public class EjemploGenericos {
             max = c;
         }
         return max;
-
     }
 }

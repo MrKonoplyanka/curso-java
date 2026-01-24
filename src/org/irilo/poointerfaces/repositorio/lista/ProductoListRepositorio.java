@@ -3,12 +3,13 @@ package org.irilo.poointerfaces.repositorio.lista;
 import org.irilo.poointerfaces.modelo.Producto;
 import org.irilo.poointerfaces.repositorio.AbstractListRepositorio;
 import org.irilo.poointerfaces.repositorio.Direccion;
+import org.irilo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.List;
 
 public class ProductoListRepositorio extends AbstractListRepositorio<Producto> {
     @Override
-    public void editar(Producto producto) {
+    public void editar(Producto producto) throws LecturaAccesoDatoException {
         Producto p = porId(producto.getId());
         p.setDescripcion(producto.getDescripcion());
         p.setPrecio(producto.getPrecio());

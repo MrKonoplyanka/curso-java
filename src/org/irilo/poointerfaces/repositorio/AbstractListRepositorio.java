@@ -2,6 +2,7 @@ package org.irilo.poointerfaces.repositorio;
 
 
 import org.irilo.poointerfaces.modelo.BaseEntity;
+import org.irilo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,10 @@ public abstract class AbstractListRepositorio<T extends BaseEntity> implements F
     }
 
     @Override
-    public T porId(Integer id) {
+    public T porId(Integer id) throws LecturaAccesoDatoException {
+        if (id==null || id <= 0){
+            throw new LecturaAccesoDatoException("Id inválido");
+        }
         T resultado = null;
         for(T t:dataSource){
             if(t.getId().equals(id)){
@@ -39,7 +43,8 @@ public abstract class AbstractListRepositorio<T extends BaseEntity> implements F
 
 
     @Override
-    public void eliminar(Integer id) {
+    public void eliminar(Integer id) throws LecturaAccesoDatoException {
+
         this.dataSource.remove(this.porId(id));
     }
 
