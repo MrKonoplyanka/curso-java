@@ -2,7 +2,10 @@ package org.irilo.poointerfaces.repositorio;
 
 
 import org.irilo.poointerfaces.modelo.BaseEntity;
+import org.irilo.poointerfaces.repositorio.excepciones.AccesoDatoException;
+import org.irilo.poointerfaces.repositorio.excepciones.EscrituraAccesoDatoException;
 import org.irilo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
+import org.irilo.poointerfaces.repositorio.excepciones.RegistroDuplicadoAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,12 +35,21 @@ public abstract class AbstractListRepositorio<T extends BaseEntity> implements F
                 break;
             }
         }
+        if(resultado==null){
+            throw new LecturaAccesoDatoException("No existe el registro con el id: " + id);
+        }
 
         return resultado;
     }
 
     @Override
-    public void crear(T t) {
+    public void crear(T t) throws EscrituraAccesoDatoException {
+        if (t == null){
+            throw new EscrituraAccesoDatoException("Error al insertar un objeto null");
+        }
+        if(this.dataSource.contains(t)){
+            throw new RegistroDuplicadoAccesoDatoException("Ya existe el objeto con id: " + t.getId());
+        }
         this.dataSource.add(t);
     }
 

@@ -1,10 +1,8 @@
 package org.irilo.poointerfaces;
 
-import org.irilo.poointerfaces.modelo.Cliente;
 import org.irilo.poointerfaces.modelo.Producto;
 import org.irilo.poointerfaces.repositorio.Direccion;
 import org.irilo.poointerfaces.repositorio.FullRepositorio;
-import org.irilo.poointerfaces.repositorio.lista.ClienteListRepositorio;
 import org.irilo.poointerfaces.repositorio.lista.ProductoListRepositorio;
 
 import java.util.List;

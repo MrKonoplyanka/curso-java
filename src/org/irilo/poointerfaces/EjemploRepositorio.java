@@ -3,7 +3,9 @@ package org.irilo.poointerfaces;
 import org.irilo.poointerfaces.modelo.Cliente;
 import org.irilo.poointerfaces.repositorio.*;
 import org.irilo.poointerfaces.repositorio.excepciones.AccesoDatoException;
+import org.irilo.poointerfaces.repositorio.excepciones.EscrituraAccesoDatoException;
 import org.irilo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
+import org.irilo.poointerfaces.repositorio.excepciones.RegistroDuplicadoAccesoDatoException;
 import org.irilo.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
@@ -16,7 +18,12 @@ public class EjemploRepositorio {
         repo.crear(new Cliente("Jano", "Pérez"));
         repo.crear(new Cliente("Bea", "González"));
         repo.crear(new Cliente("Luci", "Martínez"));
-        repo.crear(new Cliente("Andrés", "Guzmán"));
+        Cliente andres = new Cliente("Andrés", "Guzmán");
+        repo.crear(andres);
+        repo.crear(andres);
+
+
+        //repo.crear(null);
         List<Cliente> clientes = repo.listar();
         clientes.forEach(System.out::println);
 
@@ -39,11 +46,22 @@ public class EjemploRepositorio {
         repo.listar().forEach(System.out::println);
 
         System.out.println("Total registros: " + repo.total());
-        }catch (LecturaAccesoDatoException e){
-            System.out.println("e = " + e);
+        }
+        catch (RegistroDuplicadoAccesoDatoException e) {
+            System.out.println("Duplicado = " + e.getMessage());
             e.printStackTrace();
-        }catch (AccesoDatoException e){
-            System.out.println("e = " + e);
+        }
+        catch(LecturaAccesoDatoException e){
+            System.out.println("Lectura = " + e.getMessage());
+            e.printStackTrace();
+        }
+        catch(EscrituraAccesoDatoException e){
+            System.out.println("Escritura: " + e.getMessage());
+            e.printStackTrace();
+        }
+        catch (AccesoDatoException e){
+            System.out.println("Genérica = " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }
