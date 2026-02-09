@@ -9,8 +9,10 @@ import java.text.Normalizer;
 public class EjemploDecorador {
     public static void main(String[] args) {
         Formateable texto = new Texto("Hola que tal Andrés!");
-        MayusculaDecorador may = new MayusculaDecorador(texto);
-        ReversaDecorador rev = new ReversaDecorador(may);
-        SubrayadoDecorador sub
+        MayusculaDecorador mayuscula = new MayusculaDecorador(texto);
+        ReversaDecorador reversa = new ReversaDecorador(mayuscula);
+        SubrayadoDecorador subrayado = new SubrayadoDecorador(reversa);
+
+        System.out.println(subrayado.darFormato());
     }
 }
