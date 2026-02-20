@@ -8,9 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @WebServlet("/registro")
 public class FormServlet extends HttpServlet {
@@ -28,29 +26,30 @@ public class FormServlet extends HttpServlet {
         String habilitar = req.getParameter("habilitar");
         String secreto = req.getParameter("secreto");
 
-        List<String> errores = new ArrayList<>();
+        Map<String,String> errores = new HashMap<>();
+
 
         if (username.isBlank() || username == null) {
-            errores.add("El username es requerido");
+            errores.put("username","El username es requerido");
         }
 
         if (password.isBlank() || password == null) {
-            errores.add("El password es requerido");
+            errores.put("password","El password es requerido");
         }
         if (!email.contains("@") || email == null) {
-            errores.add("El email es requerido y debe tener formato de correo");
+            errores.put("email","El email es requerido y debe tener formato de correo");
         }
         if (pais.isBlank() || username == null) {
-            errores.add("El país es requerido");
+            errores.put("pais","El país es requerido");
         }
         if (lenguajes == null || lenguajes.length == 0) {
-            errores.add("El lenguaje es requerido");
+            errores.put("lenguajes","El lenguaje es requerido");
         }
         if (roles == null || roles.length == 0) {
-            errores.add("El rol es requerido");
+            errores.put("roles","El rol es requerido");
         }
         if (idioma == null) {
-            errores.add("El idioma es requerido");
+            errores.put("idioma","El idioma es requerido");
         }
         if (errores.isEmpty()) {
             try (PrintWriter out = resp.getWriter()) {
@@ -93,5 +92,6 @@ public class FormServlet extends HttpServlet {
 //                });
 //                out.println("<p><a href=\"/webapp-form/index.jsp\">Volver</a></p>");
         }
+
     }
 }

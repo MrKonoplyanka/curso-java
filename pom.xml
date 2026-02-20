@@ -38,7 +38,7 @@
                 <configuration>
                     <url>http://localhost:8080/manager/text</url>
                     <username>admin</username>
-                    <password>1234</password>
+                    <password>12345</password>
                 </configuration>
             </plugin>
         </plugins>
