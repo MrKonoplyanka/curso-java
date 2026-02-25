@@ -1,8 +1,40 @@
 # ☕ Java Backend Learning Path
 
-Repositorio que recoge mi evolución práctica en Java, desde fundamentos de programación orientada a objetos hasta conceptos modernos de Java 8+, testing y desarrollo web con Servlets y JDBC.
+Repositorio que recoge mi evolución práctica siguiendo el curso:
 
-El objetivo es consolidar una base sólida para desarrollo backend profesional.
+**Universidad Java – De Cero a Experto (Udemy)**  
+⭐ 4.7/5 (13.000+ valoraciones)  
+👨‍🎓 +97.000 estudiantes  
+🎥 163,5 horas de contenido  
+🗓 Última actualización: Enero 2026  
+👉 https://www.udemy.com/share/103lHk3@QduEjSZAJpWxPR9sTEjGHXOpvkxSfWZc0j63p9nF3sbWbzzegw3f2wIaKp9PJaYQsw==/
+
+Actualmente en progreso.
+
+Este repositorio organiza prácticas, ejercicios y proyectos desarrollados durante el aprendizaje, estructurados como un roadmap progresivo hacia desarrollo backend profesional con Java.
+
+---
+
+## 🎯 Alcance del curso
+
+El curso cubre un recorrido completo desde fundamentos hasta desarrollo empresarial moderno:
+
+- Programación Orientada a Objetos (POO)
+- Patrones de diseño (GoF)
+- Programación funcional (Lambda, Streams, Optional)
+- Concurrencia y multihilos
+- Testing profesional con JUnit 5 y Mockito
+- Aplicaciones de escritorio (JavaFX, Swing)
+- Desarrollo web con Jakarta EE (Servlets, JSP, JSF, EJB, CDI)
+- JDBC, JPA y Hibernate
+- API RESTful (JAX-RS) y SOAP (JAX-WS)
+- Seguridad (JAAS)
+- Spring Boot y Spring WebFlux
+- Microservicios con Spring Boot y Spring Cloud
+- Aplicaciones reactivas con Reactor
+- Desarrollo Full Stack con Angular y React
+
+Compatible con Java 17, 21, 25+.
 
 ---
 
@@ -50,49 +82,45 @@ El objetivo es consolidar una base sólida para desarrollo backend profesional.
 
 ---
 
-## 🎯 Objetivos de aprendizaje
+## 🛠 Tecnologías trabajadas
 
-- Dominar fundamentos sólidos de Java
-- Comprender programación orientada a objetos avanzada
-- Aplicar programación funcional en Java 8+
-- Manejar concurrencia básica
-- Trabajar con JDBC y transacciones
-- Implementar testing unitario profesional
-- Desarrollar aplicaciones web con Servlets
-
----
-
-## 🛠 Tecnologías utilizadas
-
-- Java 8+
+- Java 17+ (compatible hasta JDK 25)
 - IntelliJ IDEA
 - Maven
 - JUnit 5
 - Mockito
 - JDBC
-- Servlets API
+- Jakarta EE
+- JPA / Hibernate
+- Spring Boot
+- Spring Cloud
+- Reactor / WebFlux
 
 ---
 
-## 📈 Roadmap
+## 📈 Evolución profesional
 
-Este repositorio forma parte de mi evolución como Backend Developer y sirve como base para:
+Este repositorio forma parte de mi roadmap como Backend Developer y complementa proyectos donde aplico:
 
-- Spring Boot
-- JPA / Hibernate
 - Arquitectura limpia (Clean Architecture)
+- Principios SOLID
 - Testing avanzado
-- Desarrollo backend empresarial
+- Diseño de APIs REST
+- Microservicios
+- Integración frontend-backend
+
+El objetivo no es solo completar el curso, sino aplicar los conceptos en entornos reales y profesionales.
 
 ---
 
 ## 🚀 Próximos pasos
 
-- Integración con Spring Boot
-- Persistencia con JPA
+- Profundizar en Spring Boot avanzado
+- Implementar arquitectura hexagonal
 - Seguridad con Spring Security
-- Diseño de APIs REST
+- Despliegue y contenerización
+- Integración con frontend (Angular)
 
 ---
 
-📌 Repositorio organizado como ruta estructurada de aprendizaje y práctica continua.
+📌 Proyecto de aprendizaje continuo orientado a desarrollo backend profesional.
