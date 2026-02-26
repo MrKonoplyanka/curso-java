@@ -1,6 +1,6 @@
-package org.irilo.apiservlet.webapp.headers.service;
+package org.irilo.apiservlet.webapp.cookie.service;
 
-import org.irilo.apiservlet.webapp.headers.models.Producto;
+import org.irilo.apiservlet.webapp.cookie.models.Producto;
 
 import java.util.Arrays;
 import java.util.List;

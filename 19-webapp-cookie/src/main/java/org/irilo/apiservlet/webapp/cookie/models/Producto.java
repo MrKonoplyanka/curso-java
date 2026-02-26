@@ -1,4 +1,4 @@
-package org.irilo.apiservlet.webapp.headers.models;
+package org.irilo.apiservlet.webapp.cookie.models;
 
 public class Producto {
     private Long id;
